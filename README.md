@@ -77,8 +77,6 @@ I am showing the simplest one here which is called “nearest-neighbour interpol
 
 Of note, we don’t have enough RAM to do the scaling on neither 16-bit, not 8-bit versions of our image, thus the choice of 1bpp.  With 1bpp, this simple interpolation works perfectly fine.
 
-In the example I share, we go from a 320x240 1bpp dithered image to a 640x480 dithered 1bpp image.
-
 ### Image rotation
 Our image buffer for this section is a linear array of 1bpp values packaged up as uint16_t. This means that each half-word stores not one pixel but sixteen (!) pixels.
 
@@ -89,7 +87,7 @@ The algorithm I am sharing here has been partially found as trial-and-error test
 At any rate, it works.
 
 ## User guide
-The source file includes the five functions for the algorithm. Simply transfer the function to your own code, paying attention to apply it on a linear image buffer.
+The source file includes the five functions for the algorithms. Simply transfer the function to your own code and pay attention to apply them on a linear image buffer.
 
 ## Conclusion
 These are just a few algorithms I have used in one of my recent projects. Sharing them here so others may benefit.
