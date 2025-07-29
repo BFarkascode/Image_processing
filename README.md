@@ -59,12 +59,12 @@ To generate a true monochrome image, we need to extract the luminance from the i
 In the first algorithm, I am implementing a luminance colour calculation after the three RGB565 colours have been normalized to 8 bits. The received luminance value then can be de-normalized to any colour we wish by converting it back to RGB565.
 
 Of note, most embedded cameras have the option to generate a YUV output off the bat, making this conversion irrelevant. Just pay attention, which YUV format the output will be in.
-For further information, check Y′UV - Wikipedia.
+For further information: (https://en.wikipedia.org/wiki/Y%E2%80%B2UV).
 
 ### Dithering and 1bpp
 Dithering is a type of error diffusing algorithm. It means, practically speaking, that we are actively removing data from an image. If done well though, we can trim as much fat from our data package as possible while still retaining basic information.
 
-A good example are the Floyd-Steinberg (Floyd–Steinberg dithering - Wikipedia) and Atkinson (Atkinson dithering - Wikipedia) dithering algorithms, which can turn any image into a 1-bpp (1 bit per pixel) form of itself, drastically reducing the data stored in the data package (in case of RGB565, by 16 times) without compromising the most critical information within the image data (i.e., edges). Thus, in case we only need such critical information extracted from our image, we can speed up our data flow by sacrificing data quality and quantity.
+A good example are the Floyd-Steinberg (https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering) and Atkinson (https://en.wikipedia.org/wiki/Atkinson_dithering) dithering algorithms, which can turn any image into a 1-bpp (1 bit per pixel) form of itself, drastically reducing the data stored in the data package (in case of RGB565, by 16 times) without compromising the most critical information within the image data (i.e., edges). Thus, in case we only need such critical information extracted from our image, we can speed up our data flow by sacrificing data quality and quantity.
 
 In the code, I am sharing the algorithm for both the Floyd and the Atkinson dithering, though personally I have found the Atkinson to be better for edge detection while Floyd is “smoother” and significantly simpler to implement.
 
@@ -73,7 +73,7 @@ We do the dithering on the luminance array generated above since it is simply ea
 ### Image upscaling
 It may come to be that the original image we have in our buffer just does not fit the size we need. Ideally, we just take a higher resolution image, though this may not always be possible for hardware reasons (e.g., not enough memory, not enough camera resolution). In such case, we have to upscale our original image by using some form of scaling algorithm.
 
-I am showing the simplest one here which is called “nearest-neighbour interpolation”. What it does is turning 1 pixel into a 2x2 pixel array of itself. The result is a 4-times upscaled image, significantly more pixelated than the original one. The Wikipedia page discusses more complex upscaling algorithms too (Comparison gallery of image scaling algorithms - Wikipedia).
+I am showing the simplest one here which is called “nearest-neighbour interpolation”. What it does is turning 1 pixel into a 2x2 pixel array of itself. The result is a 4-times upscaled image, significantly more pixelated than the original one. The Wikipedia page discusses more complex upscaling algorithms too (https://en.wikipedia.org/wiki/Comparison_gallery_of_image_scaling_algorithms).
 
 Of note, we don’t have enough RAM to do the scaling on neither 16-bit, not 8-bit versions of our image, thus the choice of 1bpp.  With 1bpp, this simple interpolation works perfectly fine.
 
