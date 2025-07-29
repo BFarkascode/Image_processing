@@ -23,7 +23,7 @@ Memory will be a highly sensitive element in any image processing project. First
 There are two additional things to mention here though:
 -	In case we intend to use Touch GFX or LVGL (graphics libraries for mcus), we may need multiple image buffers at the same time to handle transitions.
 -	We can limit the image buffer by capturing only a section of the image at one time and then gluing the final result together from these sections by using, say a bmp file opened with “append” command in FatFs. (This should be simple to implement using the projects I have already shared.)
--	
+
 Anyway, I will assume that we will have just one image buffer to store the 320x240 pixel 16-bit RGB565 image and that will store our original image. This will take up 153600 bytes of RAM, which will take away most of the RAM available in the F429. Not ideal, but we can work with it.
 
 ### The data package
