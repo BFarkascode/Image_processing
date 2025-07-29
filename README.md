@@ -6,7 +6,9 @@ As of 2025, image processing is used everywhere, be that face recognition or jus
 
 On the other hand, once we need something simple to be done on a platform that is not meant to be used for such processes - i.e., mcu-s – we can find ourselves very quickly stuck between a rock and hard place.
 
-I want to touch upon here on a few tricks I have implemented on an STM32F429VE to share, what can be done and have some form of image processing done on an mcu. Of note, unlike before, I won’t be doing a full project here but simply share the algorithms that could be then applied to an image buffer. The reason for this is that publishing and loading the image buffer by itself would merit an entire project (see my digicam project on the STM32F429ZI disco board) and putting that in here would distract from the core message of this repo.
+I want to touch upon here on a algorithms I have implemented on an STM32F429VE, what form of image processing can done on an mcu and what I have ended up doing.
+
+Of note, unlike before, I won’t be doing a full project here but simply share the algorithms that could be then applied to an image buffer. The reason for this is that publishing and loading the image buffer by itself would merit an entire project (see my digicam project on the STM32F429ZI disco board) and putting that in here would distract from the core message of this repo.
 
 ## Limiting factors
 To be fair, most projects aiming to run algorithms like the ones presented here would be running them on the biggest, meanest mcu, which would have significant resources readily available to be exploited by the algorithm. As a matter of fact, one can easily find example projects doing way more than what I discuss here running on ESP32 devices (just check the Memento from Adafruit if you want to be impressed). As such, for anyone not interested in these algorithms, just get an ESP32 and use their existing libraries. They are good and do the trick perfectly well.
