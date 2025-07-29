@@ -33,7 +33,7 @@ If data must flow at an acceptable speed, that is a whole different beast. In ca
 
 Self-imposed limitations on what we generate from the image can somewhat aid with the speed since the smaller we can make the generated data package, the faster we can push it through a communication bus or publish it to a screen (assuming clocking is not changed). In other cases, we might be limited in the size of the data package we could load to a data bus at one time as it sometimes happens with Bluetooth.
 
-Anyway, such limitation could be processing a fraction of the image at one time to meet the timing deadline or by decreasing the information within the complete image buffer while still retaining an acceptable level of image detail. (I will only discuss the second option.)
+Anyway, such limitation could be processing a fraction of the image at one time to meet the timing deadline or by decreasing the information within the complete image buffer while still retaining an acceptable level of image detail, using something called "dithering". (I will only discuss this second option.)
 
 ## Previous relevant projects:
 Not any, though my digital camera project on the F429 disco board could be used to load the proposed image buffer up with relevant data:
