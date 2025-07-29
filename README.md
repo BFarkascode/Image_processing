@@ -1,5 +1,5 @@
 # Image_Processing
-A short project to share and explain some image processing algorithms.
+A short project to share and explain some image processing algorithms compatible with mcu-s.
 
 ## General description
 As of 2025, image processing is used everywhere, be that face recognition or just to make that one scatter plot a little bit more according-to-what-is-expected using MS Paint. Image processing tools are available and simple to use, plus they never expose the user to the algorithms that are being utilised. All is conveniently one click away on a PC or a smart phone.
